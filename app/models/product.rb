@@ -4,8 +4,8 @@ class Product < ApplicationRecord
   has_many :reviews
 
 
-  validates :name, :description, :price_in_cents, :url, presence: true
-  validates :price_in_cents, numericality: { greater_than: 0 }
+  validates :name, :description, :price, :url, presence: true
+  validates :price, numericality: { greater_than: 0 }
 
 
 end

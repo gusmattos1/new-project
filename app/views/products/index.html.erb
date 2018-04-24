@@ -1,0 +1,10 @@
+<section class="index">
+  <% @products.each do |product| %>
+
+
+    <div class="single">
+      <%= render "product_individual", product: product %>
+    </div>
+
+  <% end %>
+</section>
