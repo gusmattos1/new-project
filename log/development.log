@@ -1753,3 +1753,484 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 50ms (Views: 47.5ms | ActiveRecord: 0.4ms)
 
 
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Dropuser (20180424224003)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ db/migrate/20180424224003_dropuser.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180424224003"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to NewUserTable (20180424224114)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180424224114_new_user_table.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(10) NOT NULL, "last_name" varchar(10) NOT NULL, "username" varchar(20) NOT NULL, "email" varchar(30) NOT NULL, "password_digest" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180424224114_new_user_table.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180424224114"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-04-24 18:51:37 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gustavodemattos/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/_product_individual.html.erb (1.5ms)
+  Rendered products/index.html.erb within layouts/application (13.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=2):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb___4289335561083120276_70195248850540'
+Started GET "/" for 127.0.0.1 at 2018-04-24 18:51:45 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/_product_individual.html.erb (1.1ms)
+  Rendered products/index.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=2):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb___4289335561083120276_70195294668600'
+Started GET "/" for 127.0.0.1 at 2018-04-24 18:51:51 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/_product_individual.html.erb (1.0ms)
+  Rendered products/index.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=2):
+  
+app/controllers/application_controller.rb:7:in `current_user'
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb___4289335561083120276_70195301617460'
+Started GET "/" for 127.0.0.1 at 2018-04-24 18:52:06 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/_product_individual.html.erb (0.9ms)
+  Rendered products/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 51ms (Views: 46.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2018-04-24 18:52:20 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (100.3ms)
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `users_path' for #<#<Class:0x00007faf36713120>:0x00007faf36711690>
+Did you mean?  user_path):
+    1: <h1>User#new</h1>
+    2: <%= form_for @user do |f| %>
+    3: 
+    4: <!-- Display Error Message if User didn't saved -->
+    5: <% if @user.errors.any? %>
+  
+app/views/users/new.html.erb:2:in `_app_views_users_new_html_erb__3248061409959041816_70195254697140'
+Started GET "/user/new" for 127.0.0.1 at 2018-04-24 18:54:23 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 78ms (Views: 72.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2018-04-24 18:54:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user/new"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user/new" for 127.0.0.1 at 2018-04-24 18:55:04 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 71ms (Views: 51.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/user" for 127.0.0.1 at 2018-04-24 18:55:29 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wqy8B+dh3Y6jw00qDLU27LDIWFJAbO9thqGzCXkhEV29Jlc1WHyj7MLnWBQipvG3mxiXoUbhOn6kOghyYo3ADA==", "user"=>{"first_name"=>"Gustavo", "last_name"=>"Mattos", "username"=>"gdm_pg", "email"=>"gdm_pg@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 94ms (Views: 31.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/user" for 127.0.0.1 at 2018-04-24 18:55:48 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cXKeeKsY52V3+6eYvFfx4Bq44R1eflKrk/uOKfy2d5yW+HVKFAWZBxbfsqaSRDa7MWgu7ljzh7ixYDVS5xqmzQ==", "user"=>{"first_name"=>"Gustavo", "last_name"=>"de Mattos", "username"=>"gdm_pg", "email"=>"gdm_pg@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "gdm_pg@hotmail.com"], ["password_digest", "$2a$10$3y0Z6d38MHenyICO0fPF6uvvFRAJcht0rViUcrl1EHhsQ8mhBXZRS"], ["created_at", "2018-04-24 22:55:48.458933"], ["updated_at", "2018-04-24 22:55:48.458933"]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: users.first_name: INSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)):
+  
+app/controllers/users_controller.rb:12:in `create'
+Started POST "/user" for 127.0.0.1 at 2018-04-24 18:59:17 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cXKeeKsY52V3+6eYvFfx4Bq44R1eflKrk/uOKfy2d5yW+HVKFAWZBxbfsqaSRDa7MWgu7ljzh7ixYDVS5xqmzQ==", "user"=>{"first_name"=>"Gustavo", "last_name"=>"de Mattos", "username"=>"gdm_pg", "email"=>"gdm_pg@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Gustavo"], ["last_name", "de Mattos"], ["username", "gdm_pg"], ["email", "gdm_pg@hotmail.com"], ["password_digest", "$2a$10$6Qu7xtfoN.omASLP7WISgeVfUBrRW8XL8BIJ9KSIhhAZiVQEzMK9i"], ["created_at", "2018-04-24 22:59:17.325290"], ["updated_at", "2018-04-24 22:59:17.325290"]]
+  ↳ app/controllers/users_controller.rb:19
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19
+Completed 500 Internal Server Error in 261ms (ActiveRecord: 2.5ms)
+
+
+  
+NameError (undefined local variable or method `login_path' for #<UsersController:0x00007faf3a8ab1a0>):
+  
+app/controllers/users_controller.rb:20:in `create'
+Started POST "/user" for 127.0.0.1 at 2018-04-24 18:59:54 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cXKeeKsY52V3+6eYvFfx4Bq44R1eflKrk/uOKfy2d5yW+HVKFAWZBxbfsqaSRDa7MWgu7ljzh7ixYDVS5xqmzQ==", "user"=>{"first_name"=>"Gustavo", "last_name"=>"de Mattos", "username"=>"gdm_pg", "email"=>"gdm_pg@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Gustavo"], ["last_name", "de Mattos"], ["username", "gdm_pg"], ["email", "gdm_pg@hotmail.com"], ["password_digest", "$2a$10$qmCFL8wwKa2GMBr/JYg5QuNHcnWOGWV9pA7KuykRVsixtDPALQf5C"], ["created_at", "2018-04-24 22:59:54.946634"], ["updated_at", "2018-04-24 22:59:54.946634"]]
+  ↳ app/controllers/users_controller.rb:19
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19
+Redirected to http://localhost:3000/
+Completed 302 Found in 90ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-24 18:59:54 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/_product_individual.html.erb (1.3ms)
+  Rendered products/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 64ms (Views: 53.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-04-24 18:59:59 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (200.7ms)
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<#<Class:0x00007faf3672aa50>:0x00007faf36728570>
+Did you mean?  session_path):
+    1: <h1>Users#Login</h1>
+    2: 
+    3: <%= form_for @user, url: sessions_path do |f| %>
+    4: 
+    5:  <%= f.label :username %>:
+    6:  <%= f.text_field :username %><br />
+  
+app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb__3141195987934716946_70195254745840'
+Started GET "/session/new" for 127.0.0.1 at 2018-04-24 19:00:21 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Users#Login</h1>
+    2: 
+    3: <%= form_for @user, url: session_path do |f| %>
+    4: 
+    5:  <%= f.label :username %>:
+    6:  <%= f.text_field :username %><br />
+  
+app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb__3141195987934716946_70195254258760'
+Started GET "/" for 127.0.0.1 at 2018-04-24 19:00:33 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/_product_individual.html.erb (0.6ms)
+  Rendered products/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-04-24 19:00:34 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Users#Login</h1>
+    2: 
+    3: <%= form_for @user, url: session_path do |f| %>
+    4: 
+    5:  <%= f.label :username %>:
+    6:  <%= f.text_field :username %><br />
+  
+app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb__3141195987934716946_70195254635020'
+Started GET "/session/new" for 127.0.0.1 at 2018-04-24 19:02:08 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/gustavodemattos/Documents/Bitmaker/new-project/app/views/sessions/new.html.erb:3: syntax error, unexpected ','
+...fer.append=  form_for session:, url: session_path do |f| @ou...
+...                              ^
+/Users/gustavodemattos/Documents/Bitmaker/new-project/app/views/sessions/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/sessions/new.html.erb:3: syntax error, unexpected ','
+app/views/sessions/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/session/new" for 127.0.0.1 at 2018-04-24 19:02:20 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (235.2ms)
+Completed 500 Internal Server Error in 246ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0x00007faf3672aa50>:0x00007faf3b569ba8>):
+    13: <%end%>
+    14: 
+    15: <%= link_to "Forgetten?", @users %>
+    16: <%= link_to "Signup", signup_path %>
+  
+app/views/sessions/new.html.erb:16:in `_app_views_sessions_new_html_erb__3141195987934716946_70195295769260'
+Started GET "/session/new" for 127.0.0.1 at 2018-04-24 19:03:47 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 77ms (Views: 73.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-04-24 19:03:57 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RnBYyUPqUU5ZLR1FVz1nkUMruNh42JBY5y8UgYhAds+h+rP7/PcvLDgJCHt5LqDKaPt3K35VRUvFtK/6k+ynng==", "session"=>{"username"=>"gdm_pg", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-04-24 19:05:34 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nEyt/Ow8W12hO9ZodcohXYs/nu+V3w7EsL3L/RRUer17xkbOUyElP8Afw1Zb2eYGoO9RHJNS29eSJnCGD/ir7A==", "session"=>{"username"=>"gdm_pg", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "gdm_pg"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+Redirected to http://localhost:3000/products
+Completed 302 Found in 78ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-04-24 19:05:34 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/_product_individual.html.erb (0.6ms)
+  Rendered products/index.html.erb within layouts/application (10.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 55ms (Views: 48.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-04-24 19:05:45 -0400
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_product_form.html.erb (2.6ms)
+  Rendered products/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 42ms (Views: 37.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-04-24 19:05:58 -0400
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"awoCrzRtdpFw/ne7dLqjj3t9yb9bgUkK5oyKsKZQcPMn5hkqbrZVUTyAyER5IagNPVEJUTidHnpLW3203KYSJQ==", "product"=>{"name"=>"Tv", "description"=>"LCD 50\"", "price"=>"999.999", "url"=>""}, "commit"=>"Create Product"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:41
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/products_controller.rb:41
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_product_form.html.erb (3.6ms)
+  Rendered products/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 49ms (Views: 33.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2018-04-24 19:06:15 -0400
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b6phtEVvmjNnPTUECSiIzfXBOJHVEufpMsEHjTFSLQOIIIqG+nLkUQYZIDonO0+W3hH3YtOfMvoQWrz2Kv78Ug==", "product"=>{"name"=>"Tv", "description"=>"LCD 50\"", "price"=>"999.999", "url"=>"data:image/jpeg;base64,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"}, "commit"=>"Create Product"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:41
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("user_id", "name", "description", "price", "url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", "1"], ["name", "Tv"], ["description", "LCD 50\""], ["price", 1000.0], ["url", "data:image/jpeg;base64,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"], ["created_at", "2018-04-24 23:06:15.561731"], ["updated_at", "2018-04-24 23:06:15.561731"]]
+  ↳ app/controllers/products_controller.rb:41
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:41
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2018-04-24 19:06:15 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:17
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product_individual.html.erb (0.6ms)
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = ?[0m  [["product_id", "2"]]
+  ↳ app/views/products/show.html.erb:18
+  Rendered products/_review.html.erb (1.1ms)
+  Rendered products/show.html.erb within layouts/application (11.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 64ms (Views: 33.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/products/2/reviews" for 127.0.0.1 at 2018-04-24 19:06:25 -0400
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KRGAqx+kFdAmqcxfVxHyhISvEWkz9H7mH+Jch/0q8iHOm2uZoLlrskeN2WF5AjXfr3/emjV5q/U9eef85oYjcA==", "review"=>{"description"=>"review"}, "commit"=>"Create Review", "product_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:8
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:8
+  [1m[36mReview Create (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "product_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "1"], ["product_id", "2"], ["description", "review"], ["created_at", "2018-04-24 23:06:25.276283"], ["updated_at", "2018-04-24 23:06:25.276283"]]
+  ↳ app/controllers/reviews_controller.rb:8
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:8
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 11ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2018-04-24 19:06:25 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:17
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product_individual.html.erb (0.7ms)
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."product_id" = ?[0m  [["product_id", "2"]]
+  ↳ app/views/products/show.html.erb:18
+  Rendered products/_review.html.erb (2.5ms)
+  Rendered products/show.html.erb within layouts/application (10.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 54ms (Views: 47.8ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/session.current" for 127.0.0.1 at 2018-04-24 19:06:28 -0400
+Processing by SessionsController#destroy as 
+  Parameters: {"authenticity_token"=>"/19/eIoQJ5KnG9WajZfv1S7G+uDgMteCYFblpeuGC6oY1ZRKNQ1Z8MY/wKSjhCiOBRY1E+a/ApFCzV7e8Cra+w=="}
+Redirected to http://localhost:3000/products
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-04-24 19:06:28 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/_product_individual.html.erb (0.6ms)
+  Rendered products/_product_individual.html.erb (0.2ms)
+  Rendered products/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 36ms (Views: 32.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-04-24 19:06:32 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 38ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2018-04-24 19:06:36 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 45ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+

@@ -1,26 +1,34 @@
-<%= form_for @user, url:user_path do |f| %>
-<div>
-<%= f.label :email %>
-<%= f.email_field :email %>
-</div>
+<h1>User#new</h1>
+<%= form_for @user, url: user_path do |f| %>
 
-<div>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-</div>
-
-<div>
-<%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation %>
-</div>
-
-<%= f.submit %>
-
-<% end %>
+<!-- Display Error Message if User didn't saved -->
 <% if @user.errors.any? %>
-  <ul>
-    <% @user.errors.full_messages.each do |m| %>
-      <li><%= m %></li>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
     <% end %>
-  </ul>
+    </ul>
+  <% end %>
+<!-- End Error Message -->
+
+  <%= f.label :first_name %>:
+  <%= f.text_field :first_name %><br />
+
+  <%= f.label :last_name %>:
+  <%= f.text_field :last_name %><br />
+
+  <%= f.label :username %>:
+  <%= f.text_field :username %><br />
+
+  <%= f.label :email %>:
+  <%= f.text_field :email %><br />
+
+  <%= f.label :password %>:
+  <%= f.password_field :password %><br />
+
+  <%= f.label :password_confirmation %>:
+  <%= f.password_field :password_confirmation %><br />
+
+
+  <%= f.submit %>
 <% end %>
