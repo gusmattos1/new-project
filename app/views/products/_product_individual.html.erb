@@ -1,12 +1,15 @@
-<div class="picture">
-  <%= link_to(image_tag(product.url), product_path(product)) %>
-</div>
 
-<div class="text">
-  <%= link_to "#{ product.name }", product_path(product) %>
-  <h3 class="description">
-    Description: <%= product.description %>
-    <br>
-    Price: <%= product.price %> Cents
-  </h3>
+<div class="container">
+  <div class="picture ">
+  <%= link_to image_tag(product.url), product_path(product), :class => "image"%>
+  </div>
+
+  <div class="text text-center">
+    <%= link_to "#{ product.name }", product_path(product) %>
+    <h3 class="description">
+      Description: <%= product.description %>
+      <br>
+      Price: <%= product.price %> CAD
+    </h3>
+  </div>
 </div>
